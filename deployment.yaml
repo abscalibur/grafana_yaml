@@ -13,6 +13,11 @@ spec:
       labels:
         app: grafana
     spec:
+      tolerations:
+      - effect: NoSchedule
+        key: cattle.io/os
+        value: linux
+        operator: Equal
       containers:
       - name: grafana
         image: grafana/grafana:latest
